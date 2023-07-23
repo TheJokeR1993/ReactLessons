@@ -1,0 +1,20 @@
+.school-item{
+    display: flex;
+    width: 60%;
+    flex-direction: column;
+    justify-content: center;
+    margin: 15px auto;
+}
+h2{
+    border: 1px solid red;
+    max-width: 50%;
+}
+.school-item div{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+        border: 1px solid black;
+        padding: 5px 10px;
+
+
+}
