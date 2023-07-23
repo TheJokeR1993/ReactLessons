@@ -17,12 +17,12 @@ const TodoAddItem = ({ addItem, isChange }) => {
       />
       <button
         disabled={look}
-        onClick={(e) => {
-          console.log(e);
-          e.preventDefault();
-          return isChange(value)
-            ? (addItem(value), setValue(""), setLook(true))
-            : setLook(false);
+        onClick={() => {
+          if (isChange(value)) {
+            addItem(value);
+            setValue("");
+            setLook(false);
+          } else setLook(true);
         }}
       >
         Add

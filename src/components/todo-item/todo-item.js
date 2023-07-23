@@ -20,6 +20,7 @@ const TodoItem = ({ isDone, action, id, deleteItem, isChange, isRename }) => {
 
       <input type="checkbox" defaultChecked={isDone} />
       <button onClick={() => deleteItem(id)}>Delete</button>
+
       {change ? (
         <button type="text" onClick={() => setChange(!change)}>
           Change
@@ -27,11 +28,12 @@ const TodoItem = ({ isDone, action, id, deleteItem, isChange, isRename }) => {
       ) : (
         <button
           type="text"
-          onClick={() =>
-            isChange(value, action) &&
-            (isRename({ id: id, action: value, isDone: isDone }),
-            setChange(!change))
-          }
+          onClick={() => {
+            if (isChange(value, action)) {
+              isRename({ id: id, action: value, isDone: isDone });
+              setChange(!change);
+            }
+          }}
         >
           Save
         </button>
