@@ -1,9 +1,11 @@
-import { NavLink } from "react-router-dom"
+import { Link } from "react-router-dom";
 
-const Navigation =()=>{
-    return <div className="nav">
-    <NavLink to={''}>todo</NavLink>
-    <NavLink to={'/school'}>school</NavLink>
+const Navigation = () => {
+  return (
+    <div className="nav">
+      <Link to="/">todo</Link>
+      <Link to="/school">school</Link>
     </div>
-}
-export default Navigation
+  );
+};
+export default Navigation;

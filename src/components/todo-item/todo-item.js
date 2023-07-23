@@ -1,10 +1,21 @@
 import { useState } from "react";
 import "./todo-item.css";
+import { useNavigate } from "react-router-dom";
 const TodoItem = ({ isDone, action, id, deleteItem, isChange, isRename }) => {
+  const navigate = useNavigate();
   const [change, setChange] = useState(true);
   const [value, setValue] = useState(action);
+  const goToAbout = () =>
+    navigate("/todoItem", {
+      state: {
+        id,
+        value,
+        isDone,
+      },
+    });
+
   return (
-    <div className="todo-item">
+    <div onClick={goToAbout} className="todo-item">
       <b>{id}.</b>
       {change ? (
         <h2>{action}</h2>
