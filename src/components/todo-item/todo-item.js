@@ -6,7 +6,7 @@ const TodoItem = ({ isDone, action, id, deleteItem, isChange, isRename }) => {
   const [change, setChange] = useState(true);
   const [value, setValue] = useState(action);
   const goToAbout = () =>
-    navigate("/todoItem", {
+    navigate(`/todoItem/${id}`, {
       state: {
         id,
         value,
@@ -15,10 +15,10 @@ const TodoItem = ({ isDone, action, id, deleteItem, isChange, isRename }) => {
     });
 
   return (
-    <div onClick={goToAbout} className="todo-item">
+    <div className="todo-item">
       <b>{id}.</b>
       {change ? (
-        <h2>{action}</h2>
+        <h2 onClick={goToAbout}>{action}</h2>
       ) : (
         <input
           autoFocus
