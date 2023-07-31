@@ -1,3 +1,6 @@
-.todo-add-item-input{
-   margin-right: 25px;
+.todo-add-item-input {
+  margin-right: 25px;
+}
+.ant-picker-dropdown {
+  z-index: 10000;
 }

@@ -6,13 +6,50 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  
 }
-h2,.todo-item-input{
+h2,
+.todo-item-input {
   flex-grow: 1;
   text-align: center;
 }
-button{
+button {
   margin: 0px 10px;
 }
 
+.button-submit {
+  color: red;
+  background: none;
+  border: 1px solid blue;
+  border-radius: 10px;
+}
+
+.button-submit-disable {
+  background: none;
+  border: 1px solid blue;
+  border-radius: 10px;
+  color: grey;
+  pointer-events: none;
+}
+.form-style {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+  background: white;
+  padding: 20px;
+  border-radius: 6px;
+}
+.modal_container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.form-p{
+  cursor: pointer;
+  background-color: red;
+  padding: 5px;
+  border-radius: 5px;
+}
