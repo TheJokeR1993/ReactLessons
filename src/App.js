@@ -8,6 +8,7 @@ import FormPage from "./components/form/form";
 import Tabs from "./components/tabs/tabs";
 import Queries from "./components/queries/queries";
 import RtkQueries from "./components/queries/rtk-queries";
+import RtkQueriesList from "./components/queries/rtk-queries-list";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/tabs" element={<Tabs />}></Route>
         <Route path="/queries" element={<Queries />}></Route>
         <Route path="/rtkqueries" element={<RtkQueries />}></Route>
+        <Route path="/rtkqueriesList" element={<RtkQueriesList />}></Route>
       </Routes>
     </Router>
   );

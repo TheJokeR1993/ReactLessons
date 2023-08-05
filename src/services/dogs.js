@@ -14,9 +14,16 @@ export const dogApi = createApi({
         method: "GET",
       }),
     }),
-  }),
-});
+    getAllDog: builder.query({
+        query: () => ({
+          url: `breed/hound/images`,
+          method: "GET",
+        }),
+      }),
+   
+})
+})
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetRandomDogQuery } = dogApi;
+export const { useGetRandomDogQuery, useGetAllDogQuery } = dogApi;

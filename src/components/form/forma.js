@@ -14,7 +14,6 @@ const Forma = ({ close }) => {
   const { first_name, last_name, age, zip, is_married, date } = useSelector(
     (state) => state.form.form
   );
-  console.log(date);
   const {
     handleSubmit,
     reset,
