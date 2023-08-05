@@ -3,7 +3,12 @@ import TodoItem from "../todo-item/todo-item";
 import TodoAddItem from "../todo-add-item/todo-add-item";
 import "./todo-list.css";
 import { useEffect } from "react";
+import { Button } from "antd";
+import { useDispatch, useSelector } from "react-redux";
+import { updateButton } from "../../features/button/button";
 const TodoList = () => {
+  const dispatch = useDispatch();
+  const isOpen = useSelector((state) => state.button.isOpen);
   const [arr, setArr] = useState([
     { id: 1, action: "купить хлеб", isDone: false },
     { id: 2, action: "купить молоко", isDone: true },
@@ -18,7 +23,7 @@ const TodoList = () => {
       item.id === id ? { id, action, isDone } : item
     );
     localStorage.setItem("todoList", JSON.stringify(newArr));
-     setArr(newArr);
+    setArr(newArr);
   };
   useEffect(() => {
     const isEmpty = localStorage.getItem("todoList");
@@ -54,6 +59,7 @@ const TodoList = () => {
 
   return (
     <div className="todo-list">
+      <Button onClick={() => dispatch(updateButton(!isOpen))}>Toggle</Button>
       {arr.map((item) => {
         return (
           <TodoItem

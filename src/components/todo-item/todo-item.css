@@ -17,15 +17,17 @@ button {
 }
 
 .button-submit {
-  color: red;
+  padding: 10px;
   background: none;
-  border: 1px solid blue;
+  border: 2px solid greenyellow;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .button-submit-disable {
   background: none;
-  border: 1px solid blue;
+  padding: 10px;
+  border: 2px solid grey;
   border-radius: 10px;
   color: grey;
   pointer-events: none;
@@ -40,6 +42,9 @@ button {
   background: white;
   padding: 20px;
   border-radius: 6px;
+}
+.form-style p {
+  margin: 0;
 }
 .modal_container {
   position: absolute;
