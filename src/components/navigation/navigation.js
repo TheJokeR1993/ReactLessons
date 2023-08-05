@@ -8,6 +8,7 @@ const Navigation = () => {
       <Link to="/form">form</Link>
       <Link to="/tabs">tabs</Link>
       <Link to="/queries">queries</Link>
+      <Link to="/rtkqueries">RTKqueries</Link>
     </div>
   );
 };

@@ -7,6 +7,7 @@ import TodoItemAbout from "./components/todo-item-about/todo-item-about";
 import FormPage from "./components/form/form";
 import Tabs from "./components/tabs/tabs";
 import Queries from "./components/queries/queries";
+import RtkQueries from "./components/queries/rtk-queries";
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
         <Route path="/form" element={<FormPage />}></Route>
         <Route path="/tabs" element={<Tabs />}></Route>
         <Route path="/queries" element={<Queries />}></Route>
-        
+        <Route path="/rtkqueries" element={<RtkQueries />}></Route>
       </Routes>
     </Router>
   );
