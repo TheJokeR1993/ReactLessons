@@ -6,6 +6,7 @@ import SchoolList from "./components/school-list/school-list";
 import TodoItemAbout from "./components/todo-item-about/todo-item-about";
 import FormPage from "./components/form/form";
 import Tabs from "./components/tabs/tabs";
+import Queries from "./components/queries/queries";
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
         <Route path="/todoItem/:id" element={<TodoItemAbout />}></Route>
         <Route path="/form" element={<FormPage />}></Route>
         <Route path="/tabs" element={<Tabs />}></Route>
+        <Route path="/queries" element={<Queries />}></Route>
+        
       </Routes>
     </Router>
   );
