@@ -23,6 +23,8 @@ function App() {
         <Route path="/queries" element={<Queries />}></Route>
         <Route path="/rtkqueries" element={<RtkQueries />}></Route>
         <Route path="/rtkqueriesList" element={<RtkQueriesList />}></Route>
+        <Route path="*" element={<div>Not Found</div>} />
+        <Route path="/error" element={<div>Error</div>} />
       </Routes>
     </Router>
   );

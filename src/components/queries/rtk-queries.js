@@ -1,21 +1,45 @@
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useGetRandomDogQuery } from "../../services/dogs";
+import { useFetcher, useLocation, useNavigate } from "react-router-dom";
+import Test from "./test";
 
 const RtkQueries = () => {
-  const [counts, setCounts] = useState(3);
-  const { data, error, isFetching, isLoading } = useGetRandomDogQuery(counts);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [counts, setCounts] = useState(false);
+  const { data, error, isFetching, isLoading } = useGetRandomDogQuery(3);
+
+  /*   useEffect(() => {
+    if(!location.state) navigate("/")
+    if (error) navigate("/error", { state: { error: error } });
+  }, [error]); */
+
+  const pri = () => {
+    console.log("priovet");
+  };
+
+  useEffect(() => {
+    console.log("render");
+  });
+  const dogsList = useMemo(() => {
+    return data?.message?.map((el, index) => {
+      return (
+        <React.Fragment key={index}>
+          <Test pri={pri} el={el} />
+        </React.Fragment>
+      );
+    });
+  }, [data]);
+
   if (isFetching) return <p>Loading.....</p>;
+
   return (
     <>
-      {data?.message?.map((el, index) => (
-        <React.Fragment key={index}>
-          <img src={el} alt="dog"></img>
-        </React.Fragment>
-      ))}
+      {dogsList}
 
       <button
         onClick={() => {
-          setCounts((value) => value + 3);
+          setCounts((value) => !value);
         }}
       >
         toggle
